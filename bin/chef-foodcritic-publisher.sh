@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Do not fail to parse cookbooks because of the encoding
+export LC_CTYPE=en_US.UTF-8
+
 if [ ! -d cookbooks ]; then
     echo 'This script must be run from the root of the chef repository'
     exit 1
