@@ -31,7 +31,7 @@ Runs jsonlint -v on all files in nodes/ and data_bags.  Emits jsonlint to the co
 
 ## Maturity
 
-Pre-alpha, extremely immature.  Works in my environment with my toolset, may not in yours.  Pull requests welcome.
+Pre-alpha, extremely immature.  Works in my environment with my toolset, may not in yours. Pull requests welcome.
 
 ## Roadmap
 
