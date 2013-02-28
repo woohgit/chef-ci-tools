@@ -2,7 +2,6 @@
 use warnings;
 use strict;
 use Getopt::Long;
-use v5.12;
 
 # assuming we are invoked like this:
 # foodcritic cookbooks/$cookbook | foodcritic2perl.pl --suite $cookbook  --out foodcritic-$cookbook.xml
