@@ -23,5 +23,5 @@ fi
 
 for cbname in `find cookbooks -maxdepth 1 -mindepth 1 -type d | sed -e 's/cookbooks\///'`; do
   echo "------ foodcritic checks: $cbname ------"
-  foodcritic --tags '~FC011' --tags '~FC015' --tags="~FC033" --tags="~FC034" --tags "~FC005" $@ cookbooks/$cbname | chef-ci-tools/bin/foodcritic2junit.pl --suite $cbname --out junit_reports/foodcritic-$cbname.xml
+  foodcritic $@ cookbooks/$cbname | chef-ci-tools/bin/foodcritic2junit.pl --suite $cbname --out junit_reports/foodcritic-$cbname.xml
 done
