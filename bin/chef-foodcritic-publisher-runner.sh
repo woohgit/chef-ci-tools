@@ -3,7 +3,7 @@
 # Do not fail to parse cookbooks because of the encoding
 export LC_CTYPE=en_US.UTF-8
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+DIR=$(dirname "${BASH_SOURCE[0]}")
 
 if [ ! -d junit_reports ]; then
   mkdir -p junit_reports
