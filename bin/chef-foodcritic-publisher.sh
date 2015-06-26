@@ -15,7 +15,7 @@ fi
 rm junit_reports/foodcritic-*.xml 2>/dev/null
 
 PATH=${HOME}/bin:${PATH}
-
+FOODCRITIC=${FOODCRITIC:-foodcritic}
 if [ -s ${HOME}/.rvm/scripts/rvm ]
 then
     . "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -23,5 +23,5 @@ fi
 
 for cbname in `find cookbooks -maxdepth 1 -mindepth 1 -type d | sed -e 's/cookbooks\///'`; do
   echo "------ foodcritic checks: $cbname ------"
-  foodcritic $@ cookbooks/$cbname | chef-ci-tools/bin/foodcritic2junit.pl --suite $cbname --out junit_reports/foodcritic-$cbname.xml
+  $FOODCRITIC $@ cookbooks/$cbname | chef-ci-tools/bin/foodcritic2junit.pl --suite $cbname --out junit_reports/foodcritic-$cbname.xml
 done
